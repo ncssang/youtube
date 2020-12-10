@@ -17,6 +17,7 @@ find_package(OpenCV REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(data_type src/data_type.cpp)
+add_executable(string_function src/string_function.cpp)
 
 ## Specify libraries to link a library or executable target against
 
