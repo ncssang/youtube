@@ -19,6 +19,8 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 add_executable(data_type src/data_type.cpp)
 add_executable(string_function src/string_function.cpp)
 add_executable(precedence_associativity_control_flow src/precedence_associativity_control_flow.cpp)
+add_executable(break_continue src/break_continue.cpp)
+add_executable(conditional_operator src/conditional_operator.cpp)
 
 ## Specify libraries to link a library or executable target against
 
