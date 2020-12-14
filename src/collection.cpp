@@ -1,13 +1,34 @@
 #include <iostream>
+#include <limits>
+
+void print_array(int array[], int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        std::cout << array[i] << "\t";
+    }
+    std::cout << std::endl;
+}
 
 int main()
 {
-    int guesses[20] = {12, 43, 43, 23, 43};
-    int size = sizeof(guesses) / sizeof(guesses[0]);
-    std::cout << size << std::endl;
-    for (int i = 0; i < 5; ++i)
+    // int guesses[] = {12, 43, 43, 23, 43};
+    const int SIZE = 100;
+    int guesses[SIZE];
+    int count;
+
+    for (int i = 0; i < SIZE; ++i)
     {
-        std::cout << guesses[i] << "\t";
+        if (std::cin >> guesses[i])
+        {
+            count++;
+        }
+        else
+        {
+            break;
+        }
     }
-    std::cout << std::endl;
+    print_array(guesses, count);
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
