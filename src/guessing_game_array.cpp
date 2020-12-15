@@ -1,21 +1,19 @@
-#include <cstdlib>
-#include <ctime>
+#include <array>
 #include <iostream>
-#include <string>
 
-void print_array(int array[], int size)
+void print_array(std::array<int, 251>& array, int size)
 {
     for (int i = 0; i < size; ++i)
     {
         std::cout << array[i] << "\t";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 void play_game()
 {
-    int guesses[251];
-    int guess_count = 0;
+    std::array<int, 251> guesses;
+    int count = 0;
 
     int random = rand() % 251;
     std::cout << random << std::endl;
@@ -24,7 +22,9 @@ void play_game()
     {
         int guess;
         std::cin >> guess;
-        guesses[guess_count++] = guess;
+
+        guesses[count++] = guess;
+
         if (guess == random)
         {
             std::cout << "Correct!\n";
@@ -39,7 +39,7 @@ void play_game()
             std::cout << "Too high!\n";
         }
     }
-    print_array(guesses, guess_count);
+    print_array(guesses, count);
 }
 
 int main()

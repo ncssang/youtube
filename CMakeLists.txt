@@ -21,8 +21,10 @@ add_executable(string_function src/string_function.cpp)
 add_executable(precedence_associativity_control_flow src/precedence_associativity_control_flow.cpp)
 add_executable(break_continue src/break_continue.cpp)
 add_executable(conditional_operator src/conditional_operator.cpp)
-add_executable(creating_game_menu src/creating_game_menu.cpp)
+add_executable(guessing_game_vector src/guessing_game_vector.cpp)
 add_executable(collection src/collection.cpp)
+add_executable(vector src/vector.cpp)
+add_executable(guessing_game_array src/guessing_game_array.cpp)
 
 ## Specify libraries to link a library or executable target against
 
