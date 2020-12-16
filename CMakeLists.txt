@@ -25,6 +25,8 @@ add_executable(guessing_game_vector src/guessing_game_vector.cpp)
 add_executable(collection src/collection.cpp)
 add_executable(vector src/vector.cpp)
 add_executable(guessing_game_array src/guessing_game_array.cpp)
+add_executable(range_based_for_loop src/range_based_for_loop.cpp)
+add_executable(reading_file src/reading_file.cpp)
 
 ## Specify libraries to link a library or executable target against
 
