@@ -1,9 +1,38 @@
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
-#include<fstream>
+
+void save_score(int count)
+{
+    std::ifstream input("best_score.txt");
+    if (!input.is_open())
+    {
+        std::cout << "Uable to read file!\n";
+        return;
+    }
+
+    int best_score;
+    input >> best_score;
+
+    std::ofstream output("best_score.txt");
+    if (!output.is_open())
+    {
+        std::cout << "Uable to read file!\n";
+        return;
+    }
+
+    if (count < best_score)
+    {
+        output << count;
+    }
+    else
+    {
+        output << best_score;
+    }
+}
 
 void print_vector(std::vector<int> vector)
 {
@@ -27,7 +56,7 @@ void play_game()
         int guess;
         std::cin >> guess;
 
-        count++;//or you can use guesses.size()
+        count++; //or you can use guesses.size()
 
         guesses.push_back(guess);
         if (guess == random)
@@ -44,20 +73,7 @@ void play_game()
             std::cout << "Too high!\n";
         }
     }
-
-    std::ifstream input("test.txt");
-    int best_score;
-    input >> best_score;
-    std::ofstream output("test.txt");
-    if(count < best_score)
-    {
-        output << count;
-    }
-    else 
-    {
-        output << best_score;
-    }
-
+    save_score(count);
     print_vector(guesses);
 }
 
