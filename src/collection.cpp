@@ -13,7 +13,7 @@ void print_array(int array[], int size)
 int main()
 {
     // int guesses[] = {12, 43, 43, 23, 43};
-    const int SIZE = 100;
+    const int SIZE = 10;
     int guesses[SIZE];
     int count;
 

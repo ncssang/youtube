@@ -29,7 +29,7 @@ add_executable(range_based_for_loop src/range_based_for_loop.cpp)
 add_executable(reading_file src/reading_file.cpp)
 add_executable(multidimention_array_vector src/multidimention_array_vector.cpp)
 add_executable(swap src/swap.cpp)
-add_executable(math_stuff src/math_stuff.cpp)
+add_executable(math_stuff src/math_stuff.cpp src/math.cpp)
 
 ## Specify libraries to link a library or executable target against
 
