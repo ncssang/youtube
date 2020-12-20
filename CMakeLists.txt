@@ -30,6 +30,7 @@ add_executable(reading_file src/reading_file.cpp)
 add_executable(multidimention_array_vector src/multidimention_array_vector.cpp)
 add_executable(swap src/swap.cpp)
 add_executable(math_stuff src/math_stuff.cpp src/math.cpp)
+add_executable(main src/main.cpp)
 
 ## Specify libraries to link a library or executable target against
 
