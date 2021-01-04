@@ -1,103 +1,137 @@
-// #include <iostream>
-// #include <vector>
-// // struct User
+// // #include <iostream>
+// // #include <vector>
+// // // struct User
+// // // {
+// // //     std::string first_name;
+// // //     std::string last_name;
+// // //     std::string get_status()
+// // //     {
+// // //         return status;
+// // //     }
+
+// // // private:
+// // //     std::string status = "So Handsome";
+// // // };
+
+// // class User
 // // {
+// //     std::string status = "So Handsome";
+
+// // public:
 // //     std::string first_name;
 // //     std::string last_name;
 // //     std::string get_status()
 // //     {
 // //         return status;
 // //     }
-
-// // private:
-// //     std::string status = "So Handsome";
 // // };
 
-// class User
+// // int main()
+// // {
+// //     User me;
+// //     me.first_name = "Sang";
+// //     me.last_name = "Nguyen Cong";
+// //     // me.status = "So Handsome";
+// //     std::cout << me.last_name << " " << me.first_name << " " << me.get_status() << std::endl;
+
+// //     std::vector<User> users;
+// //     users.push_back(me);
+// //     std::cout << users[0].first_name << std::endl;
+
+// //     return 0;
+// // }
+
+// #include <iostream>
+// #include <string>
+// class Student
 // {
-//     std::string status = "So Handsome";
+// private:
+//     std::string name_;
+//     size_t age_;
 
 // public:
-//     std::string first_name;
-//     std::string last_name;
-//     std::string get_status()
+//     Student(std::string name = "Unknown", size_t age = 0);
+
+//     ~Student();
+//     void print();
+//     void set_name(const std::string& name)
 //     {
-//         return status;
+//         name_ = name;
+//     }
+//     void set_age(size_t age)
+//     {
+//         age_ = age;
 //     }
 // };
 
+// Student::Student(std::string name, size_t age)
+//     : name_(name), age_(age)
+// {
+// }
+
+// Student::~Student()
+// {
+//     std::cout << name_ << " destructor\n";
+// }
+
+// void Student::print()
+// {
+//     std::cout << "Student: " << name_ << ", " << age_ << " years old." << std::endl;
+// }
+
+// void print_student(const Student& t)
+// {
+//     Student inside("sang");
+// }
+
 // int main()
 // {
-//     User me;
-//     me.first_name = "Sang";
-//     me.last_name = "Nguyen Cong";
-//     // me.status = "So Handsome";
-//     std::cout << me.last_name << " " << me.first_name << " " << me.get_status() << std::endl;
+//     // for (size_t i = 0; i < 10; ++i)
+//     // {
+//     Student student("Quang");
+//     print_student(student);
+//     // }
+//     // Student student_1("Quang", 20);
+//     // // student_1.set_name("Quang");
+//     // // student_1.set_age(30);
 
-//     std::vector<User> users;
-//     users.push_back(me);
-//     std::cout << users[0].first_name << std::endl;
-
+//     // // Student student_2;
+//     // Student student_3;
+//     // student_1.print();
+//     // student_3.print();
 //     return 0;
 // }
 
 #include <iostream>
-#include <string>
-class Student
+class Point
 {
 private:
-    std::string name_;
-    size_t age_;
+    float x, y;
 
 public:
-    Student(std::string name = "Unknown", size_t age = 0);
+    Point(float x = 0, float y = 0) : x(x), y(y) {}
+    ~Point();
 
-    ~Student();
-    void print();
-    void set_name(const std::string& name)
+    static int reverse_point(int a)
     {
-        name_ = name;
+
+        return -a;
     }
-    void set_age(size_t age)
+    void print() const
     {
-        age_ = age;
+        std::cout << x << " " << y << std::endl;
     }
 };
 
-Student::Student(std::string name, size_t age)
-    : name_(name), age_(age)
+Point::~Point()
 {
-}
-
-Student::~Student()
-{
-    std::cout << name_ << " destructor\n";
-}
-
-void Student::print()
-{
-    std::cout << "Student: " << name_ << ", " << age_ << " years old." << std::endl;
-}
-
-void print_student(const Student& t)
-{
-    Student inside("sang");
 }
 
 int main()
 {
-    // for (size_t i = 0; i < 10; ++i)
-    // {
-    Student student("Quang");
-    print_student(student);
-    // }
-    // Student student_1("Quang", 20);
-    // // student_1.set_name("Quang");
-    // // student_1.set_age(30);
 
-    // // Student student_2;
-    // Student student_3;
-    // student_1.print();
-    // student_3.print();
+    Point point, point2;
+    int reverse_point = Point::reverse_point(5);
+    std::cout << reverse_point << std::endl;
     return 0;
 }
